@@ -1,8 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
 ## This function store inverse of matrix 'x'
+## it contains 4 function (2 setters methods, 2 getter methods)
+## Two for get/set matrix itself, two for set/get inverse of matrix
 makeCacheMatrix <- function(x = matrix()) {
    inv <- NULL
   set <- function(y) {
@@ -18,12 +17,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
 ## This function calculate or retrieve from cache inverse of matrix 'x'
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
+  ## Try to get inverse from cached matrix
   inv <- x$getinv()
   if(!is.null(inv)) {
+    #if not null (cached matrix exists) retrieve inverse from cache
     message("getting cached data")
     return(inv)
   }
